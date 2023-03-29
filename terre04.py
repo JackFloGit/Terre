@@ -26,12 +26,13 @@ else :
       if len(sys.argv[1:]) >= 1 :  # arg= 0 ou 1 
       
         arg = ''.join(sys.argv[1:])
+        if arg[0] == '-':
+          arg = arg[1:]
       t_f = True
       
       for num in arg:
           if num < chr(48) or num > chr(57):
               t_f = False
-      
       if not t_f:
           print("Bien essayer mais il faut des chiffres eniers !")
       else :                                                        # arg integer != float or ascii.letter
@@ -39,3 +40,4 @@ else :
                  print("pair") 
            if int(num) % 2 != 0 :
              print ("impair")
+

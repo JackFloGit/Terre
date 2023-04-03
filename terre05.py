@@ -12,25 +12,43 @@
 #       --> python exo.py 3 5
 #           erreur.
 
-
 import sys
 
-if len(sys.argv[1:]) < 1:          
- print("Bien essayé mais il faut des chiffres entiers !")   
-else :
-      if len(sys.argv[1:]) >= 1 :  # arg= 0 ou 1 
-      
-        arg = ''.join(sys.argv[1:])
-      t_f = True
-      
-      for num in arg:
-          if num < chr(48) or num > chr(57):
-              t_f = False
-      
-      if not t_f:
-          print("Bien essayer mais il faut des chiffres eniers !")
-      else :                                                        # arg integer != float or ascii.letter
-           if int(num) % 2 == 0:
-                 print("pair") 
-           if int(num) % 2 != 0 :
-             print ("impair")
+if len(sys.argv[1:]) != 2 :                                     #1
+     print ("il faut un dividende et un diviseur")
+     exit()
+else:
+  for arg in sys.argv[1:]: 
+    if arg[0] == '-':
+      arg = arg[1:]
+  
+  t_f = True
+
+if arg < chr(48) or arg > chr(57):
+        t_f = False
+if not t_f:
+    print("Bien essayer mais il faut des chiffres entiers !")   #2
+                                                                #1-2 : 2 entité numérique entière
+
+nbr0=sys.argv[1]      #divende            #3
+nbr1=sys.argv[2]      #diviseur
+
+num0=int(nbr0)
+num1=int(nbr1)
+
+if num0 < num1:
+    print("Erreur le diviseur doit être inférieur au dividende")
+    exit()
+else :   
+  if num1 == 0:
+    print ("Erreur le diviseur ne peut pas être nul")  
+    exit()
+  else:
+
+
+
+    quotient = (num0) // (num1)
+print ('resultat :',quotient)
+
+reste = num0 % num1 
+print ('reste :',reste)                       #4. #3-4 : Calcul d'entier dont le diviseur est > 0 et du dividende

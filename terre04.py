@@ -34,7 +34,7 @@ else :
           if num < chr(48) or num > chr(57):
               t_f = False
       if not t_f:
-          print("Bien essayer mais il faut des chiffres eniers !")
+          print("Bien essayer mais il faut des chiffres entiers !")
       else :                                                        # arg integer != float or ascii.letter
            if int(num) % 2 == 0:
                  print("pair") 

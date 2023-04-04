@@ -16,13 +16,10 @@
 import sys
 
 if len(sys.argv[1:]) < 1:          
- print("Bien essayé mais il faut des caractère")
+ print("Bien essayé mais il faut des caractères")
  exit()
 else :
 
  str =' '.join(sys.argv[1:])
 reverse =''.join(str[::-1])
 print (reverse)
-
-
-#voir si je peux faire conciderer les cactere spéciaux/  demander cette consigne des arg sur discord

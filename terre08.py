@@ -9,28 +9,60 @@
 
 
 import sys
+import string
 
 if len(sys.argv[1:]) !=2:
     print ("erreur 1") 
     exit ()
 else : 
-    for arg0 in sys.argv[1:]:
-          if arg0[0] == '-':
-                arg0 = arg0[0]
-    t_f = True
+    txt0 = sys.argv[1]                                              #1
+    rep0 = txt0.replace("-","").replace(".","").replace(",","")
+   
+    txt1 = sys.argv[2]
+    rep1 = txt1.replace("-","").replace(".","").replace(",","")
+    
+    num0 = rep0.isdigit()   
+    if num0 == False :
+        print ("erreur 2.0")
+        exit()
+    num1 = rep1.isdigit()
+    if num1 == False:  
+        print ("erreur 2.1")                                        #1   1: verif si arg = num
+        exit()
 
-    if arg0 < chr(48) or arg0 > chr(57) : 
-            t_f = False
 
-if not t_f:
-    print ("erreur 2")
-    exit()
-else: 
-            num = int(sys.argv[1])
-            pow = int (sys.argv[2])
-if num == float (sys.argv[1]) and pow != float (sys.argv[2]):
-    print("erreur 3")
-    exit()
-else :
- result = (num)**(pow)
-print(result)
+
+freplace0 = txt0.replace(",",".")                                   #
+point0 = freplace0.count(".")
+freplace1 = txt1.replace(",",".")
+point1 = freplace1.count(".")                                       #2  2: remplacer "," par "."
+
+if point0 > 1:                                                      #
+ print ("erreur 3.0")
+ exit()
+if point1 > 1:
+ print ("erreur 3.1")
+ exit()                                                             #3 3: stop si + de 1 "."
+
+
+test0 = freplace0.find(".")                                         #
+test1 = freplace1.find(".")
+
+if test0 != -1:
+   number0 = float(freplace0)
+else:
+    number0 = int(freplace0)
+
+if test1 != -1:
+   number1 = float(freplace1)
+else:
+    number1 = int(freplace1)                                        #4 4: entier ou decimal 
+
+if number1 < 0 :
+   print ("erreur 4")                                               # exposant positif
+   exit()
+else:
+ pow = (number0)**(number1)
+ print (pow)
+
+

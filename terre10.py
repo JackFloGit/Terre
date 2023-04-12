@@ -18,44 +18,37 @@ if len(sys.argv[1:]) !=1:
     print("erreur 1")
     exit()
 
-t_f=True
-                                                #
-for arg in sys.argv[1:]:
- if arg < chr(48) or arg > chr(57):
-    t_f = False
-if not t_f:
-   print ("erreur 2")
-   exit()
 
-point = arg.replace(",",".")
-float = point.find(".")
+arg = sys.argv[1]
+num = arg.isdigit()
+if num == False:
+    print ("erreur 2")
+    exit()
+else:
+    x = int(arg)
 
-if float != -1:
-   print ("erreur 3")
-   exit ()
-else :
-   x = int(arg)
 sqrx = (x)**(0.5)
-intsqrx = int(sqrx)
-print(intsqrx)
+intsqrx = int(sqrx)                                 # racine carré de x
 
+if intsqrx < 2:
+    print("Oui,",arg,"est un nombre premier.")
+    exit()
 
 unknow = range(2, ((intsqrx)+1))
 
 results = []
 
 for y in unknow:
-  result = (x)/(y)
+    rest= (x)%(y)
+    results.append(rest)
 
-  results.append(result)
+premier = True
 
 for r in results:
-    print(r)
+    if r == 0:
+        premier = False
+        print("Non,",arg,"n'est pas un nombre premier.")
+        break
+if premier:
+    print("Oui,",arg,"est un nombre premier.")
 
-chn = str(r)
-end = chn.endswith('.0')
-if end is True:
-   intg = int(r)
-   print("il n'est pas premier")
-else:
-   print("il est premier")

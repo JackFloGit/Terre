@@ -7,7 +7,6 @@
 #        -->
 #       
 
-import os
+import sys
 
-file = os.path.basename(__file__)
-print(file)
+print(sys.argv[0])

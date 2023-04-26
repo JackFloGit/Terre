@@ -11,13 +11,16 @@ import string
 import sys
 
 
+
 letter = string.ascii_lowercase
 alphabet=''.join(letter)
 for arg in sys.argv[1:]:
-      
- for x in alphabet:
-            if x == arg :
-               y=alphabet.index(x)
+     if len(arg) != 1:
+          print("erreur d'argument")
+          exit()
+for x in alphabet:
+      if x == arg :
+           y=alphabet.index(x)
 print(alphabet[y:])
             
 

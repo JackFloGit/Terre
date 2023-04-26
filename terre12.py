@@ -66,12 +66,7 @@ if isdig1 != True or isdig2 != True:
 
 
 #syst24h
-point=arg.find(":")
-ltr=arg.find("M")
 
-bloc1=arg[:(point)]
-bloc2=arg[(point)+1:(ltr)-1]
-amapm=arg[(ltr)-1:(ltr)+1]
 
 heure=int(bloc1)
 minute=int(bloc2)
@@ -91,14 +86,19 @@ if ampm != "PM":
     if heure != 12:
         if heure < 10:
          print ('0'+bloc1+':'+bloc2)
+         exit()
         else:
             print (bloc1+':'+bloc2)
+            exit()
     else:
         matin=heure-12
         print('0'+str(matin)+':'+bloc2)
+        exit()
 else:
     if heure != 12:
         Après_midi=heure+12
         print(str(Après_midi)+':'+bloc2)
+        exit()
     else:
         print(str(heure)+':'+bloc2)
+        exit()

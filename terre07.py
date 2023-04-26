@@ -16,18 +16,17 @@
 
 import sys
 
-if len(sys.argv[1:]) < 1 or len(sys.argv[1:]) != 1 :          
- print("erreur")
- exit()
-else : 
-    t_f= False
-    for arg in sys.argv[1:]:
-        if arg < chr(48) or arg > chr(57):
-            t_f = True
-if not t_f:
+if len(sys.argv[1:]) != 1 :
+    print("erreur")
+    exit()
+
+t_f= False
+for arg in sys.argv[1:]:
+    if arg < chr(48) or arg > chr(57):
+        t_f = True
+isdig=arg.isdigit()
+if not t_f or isdig is True:
     print("erreur") 
     exit ()
-else :
-   
+else:
     print (len(arg))
-

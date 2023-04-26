@@ -9,26 +9,27 @@
 
 
 import sys
-import string
 
 if len(sys.argv[1:]) !=2:
     print ("erreur") 
     exit ()
-else : 
-    txt0 = sys.argv[1]                                              #
-    rep0 = txt0.replace("-","").replace(".","").replace(",","")
-   
-    txt1 = sys.argv[2]
-    rep1 = txt1.replace("-","").replace(".","").replace(",","")
-    
-    num0 = rep0.isdigit()   
-    if num0 == False :
-        print ("erreur")
-        exit()
-    num1 = rep1.isdigit()
-    if num1 == False:  
-        print ("erreur")                                        #1   1: verif si arg = num
-        exit()
+
+txt0 = sys.argv[1]                                              #
+rep0 = txt0.replace("-","").replace(".","").replace(",","")
+
+txt1 = sys.argv[2]
+rep1 = txt1.replace("-","").replace(".","").replace(",","")
+
+num0 = rep0.isdigit()
+num1 = rep1.isdigit()
+
+if num0 == False :
+    print ("erreur")
+    exit()
+
+if num1 == False:  
+    print ("erreur")                                        #1   1: verif si arg = num
+    exit()
 
 
 
@@ -38,11 +39,11 @@ freplace1 = txt1.replace(",",".")
 point1 = freplace1.count(".")                                       #2  2: remplacer "," par "."
 
 if point0 > 1:                                                      #
- print ("erreur")
- exit()
+   print ("erreur")
+   exit()
 if point1 > 1:
- print ("erreur")
- exit()                                                             #3 3: stop si + de 1 "."
+   print ("erreur")
+   exit()                                                             #3 3: stop si + de 1 "."
 
 
 test0 = freplace0.find(".")                                         #
@@ -62,7 +63,8 @@ if number1 < 0 :
    print ("erreur")                                               # exposant positif
    exit()
 else:
- pow = (number0)**(number1)
- print (pow)
+    pow = (number0)**(number1)
+    print (pow)
+    exit()
 
 

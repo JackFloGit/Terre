@@ -15,14 +15,14 @@ import sys
 import random
 
 if len(sys.argv[1:]) !=1:
-    print("erreur 1")
+    print("erreur")
     exit()
 
 
 arg = sys.argv[1]
 num = arg.isdigit()
 if num == False:
-    print ("erreur 2")
+    print ("erreur")
     exit()
 else:
     x = int(arg)

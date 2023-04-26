@@ -11,65 +11,66 @@
 
 import sys
 
+# format
 if len(sys.argv[1:]) != 1:
-    print("erreur 1")
+    print("erreur")
     exit()
 
-rep=sys.argv[1].replace(":","")
-digit=rep.isdigit()
-if digit == False:
-    print("erreur 2")
-    exit()
-
-heure = []
-H = False
-for arg in sys.argv[1:]:
-    if len(arg) < 4:
-       print ("erreur 3")
-       exit()
-    if len(arg) > 5:
-       print ("erreur 4")
-       exit()
-    if arg[1] != ":":
-     H = True
-    if not H:
-     heure.append(arg[0])
-    else:
-     if H:
-      heure.append(arg[0:2])
-
-for h in heure:
-    inth=int(h)
-    if inth > 23 :
-     print("erreur 3")
-     exit()
-
-if inth == 0:
-    mid = str(12)
-    if not H:
-       midn= mid + arg[1:4]+"AM"
-    else:
-       midn= mid + arg[2:5]+"AM"
-    print(midn)
+found=sys.argv[1].find(":")
+if found == -1:
+    print ("erreur")
     exit()
 
 
-if inth == 12:
-    midd= arg +"PM"
-    print(midd)
+for arg in sys.argv[1:]:  
+ point=arg.find(":")
+
+bloc1=arg[:(point)]
+bloc2=arg[((point)+1):]
+
+if len(bloc1) != 2:
+   print("erreur")
+   exit()
+
+
+if len(bloc2) != 2:
+   print("erreur")
+   exit()
+
+#chiffre
+isdig1=bloc1.isdigit()
+isdig2=bloc2.isdigit()
+
+if isdig1 != True or isdig2 != True:
+    print("erreur")
     exit()
 
-if inth > 12:
-    h_12=(inth)-12
-    h12= str(h_12) + arg[2:5]+"PM"
-    print(h12)
+# horaire
+heure=int(bloc1)
+minute=int(bloc2)
+
+
+if heure < 0 or heure > 23:
+    print ("erreur")
     exit()
+
+if minute < 0 or minute > 59:
+    print ("erreur")
+    exit()
+
+
+
+if heure < 1:
+   print ((str(heure+12))+(arg[point])+(str(bloc2))+"AM")
+   exit()
+if heure == 12:
+   print((str(heure))+(arg[point])+(str(bloc2))+"PM")
+   exit()
+
+if heure < 12:
+   print((str(heure))+(arg[point])+(str(bloc2))+"AM")
+   exit()
 else:
-     if not H:
-       am= str(inth) + arg[1:5]+"AM"
-       print(am)
-       exit()
-     else:
-        am= str(inth) + arg[2:5]+"AM"
-        print(am)
-        exit()
+   if heure > 12:
+      print ((str(heure-12))+(arg[point])+(str(bloc2))+"PM")
+      exit()

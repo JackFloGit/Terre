@@ -20,24 +20,24 @@
 
 import sys
 
-if len(sys.argv[1:]) < 1:          
- print("Bien essayé mais il faut des chiffres entiers !")   
-else :
-      if len(sys.argv[1:]) >= 1 :  # arg= 0 ou 1 
-      
-        arg = ''.join(sys.argv[1:])
-        if arg[0] == '-':
-          arg = arg[1:]
-      t_f = True
-      
-      for num in arg:
-          if num < chr(48) or num > chr(57):
-              t_f = False
-      if not t_f:
-          print("Bien essayer mais il faut des chiffres entiers !")
-      else :                                                        # arg integer != float or ascii.letter
-           if int(num) % 2 == 0:
-                 print("pair") 
-           if int(num) % 2 != 0 :
-             print ("impair")
+if len(sys.argv[1:]) != 1:
+    print("Bien essayé mais il faut un seul argument !")
+    exit()
 
+arg = ''.join(sys.argv[1:])
+
+if arg[0] == '-':
+  arg = arg[1:]
+
+num=arg.isdigit()
+
+if num is False:
+    print("Bien essayer mais il faut des chiffres entiers !")
+    exit()
+
+if int(arg) %2 != 0 :
+  print ("impair")
+  exit()
+else:
+  print("pair")
+  exit()

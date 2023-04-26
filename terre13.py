@@ -46,7 +46,6 @@ if int1 == int2:
     exit()
 
 Arg=[]
-
 Arg.append(int0)
 
 if (int1) < (Arg[0]):

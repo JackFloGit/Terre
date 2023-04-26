@@ -15,11 +15,10 @@
 
 import sys
 
-if len(sys.argv[1:]) < 1:          
- print("Bien essayé mais il faut des caractères")
- exit()
+if len(sys.argv[1:]) < 1:
+   print("Bien essayé mais il faut des caractères")
+   exit()
 else :
-
- str =' '.join(sys.argv[1:])
-reverse =''.join(str[::-1])
-print (reverse)
+    str =' '.join(sys.argv[1:])
+    reverse =''.join(str[::-1])
+    print (reverse)

@@ -12,7 +12,7 @@
 import sys
 
 if len(sys.argv[1:]) != 1:
-   print ("erreur 0")
+   print ("erreur")
    exit ()
 
 for arg in sys.argv[1:]:
@@ -20,7 +20,7 @@ for arg in sys.argv[1:]:
    if arg < chr(48) or arg > chr(57):
       t_f = False
    if not t_f:
-      print ("erreur 1")
+      print ("erreur")
       exit ()
  
  
@@ -28,7 +28,7 @@ replace = arg.replace(",",".")
 float =replace.find(".")
  
 if float != -1:
-   print("erreur 2")
+   print("erreur")
    exit()
    
 intarg = int(arg)

@@ -14,41 +14,34 @@
 
 import sys
 
-if len(sys.argv[1:]) != 2 :                                     #1
+if len(sys.argv[1:]) != 2 :                                     
      print ("il faut un dividende et un diviseur")
      exit()
-else:
-  for arg in sys.argv[1:]: 
-    if arg[0] == '-':
-      arg = arg[1:]
-  
-  t_f = True
 
-if arg < chr(48) or arg > chr(57):
-        t_f = False
-if not t_f:
-    print("Bien essayer mais il faut des chiffres entiers !")   #2
-                                                                #1-2 : 2 entité numérique entière
+for arg in sys.argv[1:]: 
+  if arg[0] == '-':
+    arg = arg[1:]
 
-nbr0=sys.argv[1]      #divende            #3
-nbr1=sys.argv[2]      #diviseur
+isdig0=(sys.argv[1]).isdigit()
+isdig1=(sys.argv[2]).isdigit()
 
-num0=int(nbr0)
-num1=int(nbr1)
+if isdig0 is False or isdig1 is False:
+    print("Bien essayer mais il faut des chiffres entiers !")
+    exit() 
+                                         
+
+num0=int(sys.argv[1])   #divende
+num1=int(sys.argv[2])   #diviseur 
 
 if num0 < num1:
     print("Erreur le diviseur doit être inférieur au dividende")
-    exit()
-else :   
-  if num1 == 0:
+    exit() 
+if num1 == 0:
     print ("Erreur le diviseur ne peut pas être nul")  
     exit()
-  else:
 
-
-
-    quotient = (num0) // (num1)
+quotient = (num0) // (num1)
 print ('resultat :',quotient)
 
 reste = num0 % num1 
-print ('reste :',reste)                       #4. #3-4 : Calcul d'entier dont le diviseur est > 0 et du dividende
+print ('reste :',reste)

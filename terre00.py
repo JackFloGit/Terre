@@ -10,12 +10,8 @@
 #
 
 
-
-
-
-
-
-import string
-letter = string.ascii_lowercase
-alphabet=''.join(letter)
+a=[]
+for x in range(97,123):
+    a.append(chr(x))
+alphabet=''.join(a)
 print(alphabet)

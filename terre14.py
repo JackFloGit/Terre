@@ -18,26 +18,28 @@ if len(sys.argv[1:]) < 2:
     print("erreur")
     exit()
 
-liste= []
+list0= []
+list1= []
 
 for arg in sys.argv[1:]:
     if not arg.isdigit():
         print("erreur")
         exit()
     intarg=int(arg)
-    liste.append(intarg)
+    list0.append(intarg)
+    list1.append(intarg)
 
-x=len(liste)
-i=0
-while i < (x-1):
-    if liste[i] < liste[((i)+1)]:
-        sort=True
-    else:
-       sort=False
+list2=[]
 
-    i=i+1
+while len(list1) != 0:
+    i=list1.index(min(list1))
+    list2.append(list1[i])
+    list1.pop(i)
 
-if sort == True:
-    print("Triée !")
-else:
+if list0 != list2:
     print("Pas triée !")
+    exit()
+else:
+    print("Triée !")
+    exit()
+

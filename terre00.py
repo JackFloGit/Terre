@@ -9,9 +9,11 @@
 #       -->
 #
 
+def display_alphabet():
+   a = []
+   for x in range(97,123):
+      a.append(chr(x))
+   alphabet=''.join(a)
+   print(alphabet)
 
-a=[]
-for x in range(97,123):
-    a.append(chr(x))
-alphabet=''.join(a)
-print(alphabet)
+display_alphabet()

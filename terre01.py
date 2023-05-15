@@ -9,4 +9,8 @@
 
 import sys
 
-print(sys.argv[0])
+
+def display_first_argument():
+    print(sys.argv[0])
+    
+display_first_argument()

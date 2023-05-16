@@ -11,19 +11,30 @@ import string
 import sys
 
 
+def lenght_argument():
+    if len(sys.argv[1:]) != 1 or len(sys.argv[1]) != 1:
+         print("erreur")
+         exit()
 
-letter = string.ascii_lowercase
-alphabet=''.join(letter)
-for arg in sys.argv[1:]:
-     if len(arg) != 1:
-          print("erreur d'argument")
-          exit()
-for x in alphabet:
-      if x == arg :
-           y=alphabet.index(x)
-print(alphabet[y:])
+
+def letter_check(): 
+    alpha = sys.argv[1].isalpha()
+    if not alpha:
+     print("erreur")
+     exit()
+
+
+def display_rest_alphabet():
+    letter = string.ascii_lowercase
+    alphabet=''.join(letter)
+    for x in alphabet:
+         if x == sys.argv[1] :
+              y=alphabet.index(x)
+    print(alphabet[y:])
             
-
+lenght_argument()
+letter_check()
+display_rest_alphabet()
 
 
 

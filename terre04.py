@@ -20,24 +20,29 @@
 
 import sys
 
-if len(sys.argv[1:]) != 1:
-    print("Bien essayé mais il faut un seul argument !")
-    exit()
-
 arg = ''.join(sys.argv[1:])
 
-if arg[0] == '-':
-  arg = arg[1:]
 
-num=arg.isdigit()
+def lenght_argument():
+    if len(sys.argv[1:]) != 1:
+        print("Bien essayé mais il faut un seul argument !")
+        exit()
 
-if num is False:
-    print("Bien essayer mais il faut des chiffres entiers !")
+
+def int_number():
+    global arg
+    if arg[0] == '-':
+      arg = arg[1:]
+    num=arg.isdigit()
+    if not num:
+        print("Bien essayer mais il faut des chiffres entiers !")
+        exit()
+
+
+def display_even_or_odd():
+    print("impair") if int(arg) %2 != 0 else print("pair")
     exit()
 
-if int(arg) %2 != 0 :
-  print ("impair")
-  exit()
-else:
-  print("pair")
-  exit()
+lenght_argument()
+int_number()
+display_even_or_odd()

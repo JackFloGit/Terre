@@ -15,10 +15,14 @@
 
 import sys
 
-if len(sys.argv[1:]) < 1:
-   print("Bien essayé mais il faut des caractères")
-   exit()
-else :
-    str =' '.join(sys.argv[1:])
-    reverse =''.join(str[::-1])
-    print (reverse)
+
+def generate_reverse_arg():
+   if len(sys.argv[1:]) < 1:
+      print("Bien essayé mais il faut des caractères")
+      exit()
+   else :
+      str =' '.join(sys.argv[1:])
+      reverse =''.join(str[::-1])
+      print (reverse)
+
+generate_reverse_arg()

@@ -16,17 +16,33 @@
 
 import sys
 
-if len(sys.argv[1:]) != 1 :
-    print("erreur")
-    exit()
 
-t_f= False
-for arg in sys.argv[1:]:
-    if arg < chr(48) or arg > chr(57):
-        t_f = True
-isdig=arg.isdigit()
-if not t_f or isdig is True:
-    print("erreur") 
-    exit ()
-else:
-    print (len(arg))
+def lenght_sys_arg():
+    if len(sys.argv[1:]) != 1 :
+        print("erreur")
+        exit()
+
+
+def argument_is_alpha():
+    t_f= False
+    for arg in sys.argv[1:]:
+        if arg < chr(48) or arg > chr(57):
+            t_f = True
+    arg_is_digit=arg.isdigit()
+    if arg_is_digit or not t_f:
+        print("erreur") 
+        exit ()
+
+def generate_lenght():
+    for string in sys.argv[1:]:
+        lenght= 0
+        char= string[0]
+        while char:
+            lenght += 1
+            char = string[lenght:lenght+1]
+        print(lenght)
+        exit()
+
+lenght_sys_arg()
+argument_is_alpha()
+generate_lenght()

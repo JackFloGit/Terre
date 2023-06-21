@@ -22,24 +22,22 @@ import sys
 
 
 # Functions
-
-
 def generate_3_figure_number():
-    list = []
-    for hundreds_place in range(10):
-        for tens_place in range(10):
-            for units in range(10):
-# Parsing
-                str_hunders_place = str(hundreds_place)
-                str_tens_place = str(tens_place)
-                str_units = str(units)
-                expression = str_hunders_place + str_tens_place + str_units
-# Error management
-            if int(expression[0]) < int(expression[1]) and int(expression[1]) < int(expression[2]):
-                list.append(expression)
+    list_combination = []
+    for first_sequence in range(10):
+        for second_sequence in range(10):
+            for third_sequence in range(10):
+                  hundreds_place = str(first_sequence)
+                  tens_place = str(second_sequence)
+                  units = str(third_sequence)
+                  expression = hundreds_place + tens_place + units
+                  if int(expression[0]) < int(expression[1]) and int(expression[1]) < int(expression[2]):
+                      list_combination.append(expression)
+    return list_combination
 
 # Resolution
-sequence = ', '.join(list)
+list_unsorted = generate_3_figure_number()
 
 # Display
+sequence = ', '.join(list_unsorted)
 print(sequence)

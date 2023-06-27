@@ -18,7 +18,6 @@ $>
 des chiffres différents les uns des autres.
 '''
 
-import sys
 
 
 # Functions

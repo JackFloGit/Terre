@@ -43,7 +43,7 @@ def get_absolute_value(sequence):
 
 #Error_Management
 if len(sys.argv[1:]) < 2:
-    print("error 1")
+    print("error")
     exit()
 
 for character in sys.argv[1:]:
